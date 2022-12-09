@@ -1,3 +1,5 @@
+/*Importing the csv into sas*/
+
 %web_drop_table(WORK.GAME_SALES);
 
 
@@ -11,6 +13,12 @@ PROC IMPORT DATAFILE=REFFILE
 RUN;
 
 PROC CONTENTS DATA=WORK.GAME_SALES; RUN;
+
+/*initializing search count column*/
+data game_sales;
+set game_sales;
+	search_count = 0;
+run;
 
 
 %web_open_table(WORK.GAME_SALES);
