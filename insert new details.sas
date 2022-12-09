@@ -12,6 +12,7 @@
 		JP_Sales=&JP_Sales;
 		Other_Sales=&Other_Sales;
 		Global_Sales=&Global_Sales;
+		search_count = 0;
 	run;
 
 	data id;
