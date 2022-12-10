@@ -22,7 +22,7 @@
 	    		run;
 	    		data game_sales;
 	    		modify game_sales;
-	    		where Rank = &query or Year = &query;
+	    		where Name = &query or Platform = &query or Publisher = &query;
 	    		search_count = search_count + 1;
 	    		run;
 	    		proc print data=result;
