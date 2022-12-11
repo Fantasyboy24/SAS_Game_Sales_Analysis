@@ -17,8 +17,11 @@ data year_vs_platform;
     keep year Number_of_platforms;
 run;
 
-
+ods graphics / reset width=8in height=4.5in imagemap;
 proc sgplot  data=year_vs_platform;
 	series x=year y=Number_of_platforms /markers smoothconnect;
 	yaxis integer;
+	title height=14pt "The Most Popular Platform";
+	yaxis grid integer label="Number of Platforms";
 run;
+ods graphics / reset;

@@ -1,26 +1,33 @@
 data rank_vs_sales;
     set game_sales;
+    where rank < 21;
     keep rank year na_sales eu_sales jp_sales other_sales global_sales;
 run;
-
+ods graphics / reset width=8in height=4.5in imagemap;
 proc sgplot data=rank_vs_sales;
 	vbar rank/ response=other_sales;
-	where rank < 21;
+	title height=14pt "The Number of sales in Other Countries";
+	yaxis grid integer label="Units sold (in Millions)";
 run;
 proc sgplot data=rank_vs_sales;
 	vbar rank/ response=jp_sales;
-	where rank < 21;
+	title height=14pt "The Number of sales based on rank in Japan";
+	yaxis grid integer label="Units sold (in Millions)";
 run;
 proc sgplot data=rank_vs_sales;
 	vbar rank/ response=eu_sales;
-	where rank < 21;
+	title height=14pt "The Number of sales based on rank in Europe";
+	yaxis grid integer label="Units sold (in Millions)";
 run;
 proc sgplot data=rank_vs_sales;
 	vbar rank/ response=na_sales;
-	where rank < 21;
+	title height=14pt "The Number of sales based on rank in North America";
+	yaxis grid integer label="Units sold (in Millions)";
 run;
-
 proc sgplot data=rank_vs_sales;
 	vbar rank/ response=global_sales;
-	where rank <21;
+	title height=14pt "The Number of sales based on rank Globally";
+	yaxis grid integer label="Units sold (in Millions)";
 run;
+
+ods graphics / reset;

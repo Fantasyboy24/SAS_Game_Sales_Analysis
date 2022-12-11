@@ -1,0 +1,28 @@
+ods graphics / reset width=8in height=4.5in imagemap;
+proc sgplot data=game_sales;
+	vbar platform/ response=na_sales stat=mean;
+	title height=14pt "The Average Number of sales on platform in North America";
+	yaxis grid integer label="Units sold (in Millions)";
+run;
+proc sgplot data=game_sales;
+	vbar platform/ response=eu_sales stat=mean;
+	title height=14pt "The Average Number of sales on platform in Europe";
+	yaxis grid integer label="Units sold (in Millions)";
+run;
+proc sgplot data=game_sales;
+	vbar platform/ response=jp_sales stat=mean;
+	title height=14pt "The Average Number of sales on platform in Japan";
+	yaxis grid integer label="Units sold (in Millions)";
+run;
+proc sgplot data=game_sales;
+	vbar platform/ response=other_sales stat=mean;
+	title height=14pt "The Average Number of sales on platform in Other Countries";
+	yaxis grid integer label="Units sold (in Millions)";
+run;
+proc sgplot data=game_sales;
+	vbar platform/ response=global_sales stat=mean;
+	title height=14pt "The Average Number of sales on platform in Globally";
+	yaxis grid integer label="Units sold (in Millions)";
+run;
+
+ods graphics / reset;
