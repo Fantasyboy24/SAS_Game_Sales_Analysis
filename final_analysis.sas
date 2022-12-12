@@ -51,22 +51,22 @@ ods graphics / reset width=8in height=4.5in imagemap;
 proc sgplot data=game_sales;
 	vbar platform/ response=na_sales stat=mean;
 	title height=14pt "The Average Number of sales on platform in North America";
-	yaxis grid integer label="Units sold (in Millions)";
+	yaxis grid label="Units sold (in Millions)";
 run;
 proc sgplot data=game_sales;
 	vbar platform/ response=eu_sales stat=mean;
 	title height=14pt "The Average Number of sales on platform in Europe";
-	yaxis grid integer label="Units sold (in Millions)";
+	yaxis grid label="Units sold (in Millions)";
 run;
 proc sgplot data=game_sales;
 	vbar platform/ response=jp_sales stat=mean;
 	title height=14pt "The Average Number of sales on platform in Japan";
-	yaxis grid integer label="Units sold (in Millions)";
+	yaxis grid label="Units sold (in Millions)";
 run;
 proc sgplot data=game_sales;
 	vbar platform/ response=other_sales stat=mean;
 	title height=14pt "The Average Number of sales on platform in Other Countries";
-	yaxis grid integer label="Units sold (in Millions)";
+	yaxis grid label="Units sold (in Millions)";
 run;
 proc sgplot data=game_sales;
 	vbar platform/ response=global_sales stat=mean;
@@ -76,13 +76,6 @@ run;
 
 ods graphics / reset;
 
-proc chart data=game_sales;
-	pie genre/ sumvar=na_sales type=mean;
-	pie genre/ sumvar=eu_sales type=mean;
-	pie genre/ sumvar=jp_sales type=mean;
-	pie genre/ sumvar=other_sales type=mean;
-	pie genre/ sumvar=global_sales type=mean;
-run;
 
 proc sort data=game_sales 
     out=pop_pub;
@@ -200,4 +193,21 @@ proc sgplot  data=year_vs_publisher;
 	yaxis grid integer label="Number of publishers";
 run;
 
+ods graphics / reset;
+
+ods graphics / reset width=8in height=4.5in imagemap;
+proc chart data=game_sales;
+	pie genre/ sumvar=na_sales type=mean;
+	title "Average of sales per genre in North America";
+	pie genre/ sumvar=eu_sales type=mean;
+	title "Average of sales per genre in Europe";
+run;
+proc chart data=game_sales;
+	pie genre/ sumvar=jp_sales type=mean;
+	title "Average of sales per genre in Japan";
+	pie genre/ sumvar=other_sales type=mean;
+	title "Average of sales per genre in Other Countries";
+	pie genre/ sumvar=global_sales type=mean;
+	title "Average of sales per genre Globally";
+run;
 ods graphics / reset;
