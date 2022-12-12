@@ -3,13 +3,11 @@
 # Table of contents
 ## General info
 
-A Gaming leaderboard that is based on games from 1977 to 
+### Gaming Leadership
+A Gaming leaderboard that is based on games from 1977 to 2020 in which users can insert a new game and it will be ranked accordingly and modify details or delete records 
 
-### SAS_Addressbook
-
-## Address Book Service
-
-An online address book service where users can view a digital version of a address book and add, modify and delete information.
+### Game Analysis 
+An detailed analysis of the gaming records which provides and insight on different topics like publishers , platforms and genre's etc..
 
 ## Technologies Used
 
@@ -17,41 +15,37 @@ SAS
 
 ## Features
 
-Query to add their address details together with their names and contact details.
+Query to add their new game details which will be ranked according to their sales.
 
-Query to modify their address details together with their names and contact details.
+Query to modify their game details which will be ranked according to their sales.
 
-Query to delete their address details together with their names and contact details.
+Query to delete game details which.
 
-Query to view all the content in the address book as well as view the popular searches.
+Query to view all the content in the game leaderboard as well as view the popular searches.
 
 ## The Tables
 
 Fields
 
-details
+Rank 
 
-id (primary key)
+Name 
 
-names
+Platform
 
-email
+Year
 
-contact
+Genre
 
-location
+North American Sales 
 
-id(foreign key)
+Europe Sales
 
-street name
+Japan Sales
 
-house number
+Other Sales 
 
-city
-
-province
-
-postcode
+Global Sales
 
 search count
 
@@ -60,11 +54,5 @@ search count
 Completed
 
 ## Acknowledgements
-
-Tetelo
-
-Gudani
-
-Sibongile
 
 John
