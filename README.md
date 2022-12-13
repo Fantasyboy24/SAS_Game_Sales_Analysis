@@ -3,7 +3,7 @@
 # Table of contents
 ## General info
 
-### Gaming Leadership
+### Gaming Leaderboard
 A Gaming leaderboard that is based on games from 1977 to 2020 in which users can insert a new game and it will be ranked accordingly and modify details or delete records 
 
 ### Game Analysis 
